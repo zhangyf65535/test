@@ -1,0 +1,15 @@
+[32mINFO    [0m my_log:basepage.py:31 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+[32mINFO    [0m my_log:basepage.py:55 查找清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+[32mINFO    [0m my_log:basepage.py:116 在清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')清除文本值成功！
+[32mINFO    [0m my_log:basepage.py:31 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+[32mINFO    [0m my_log:basepage.py:55 查找登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+[32mINFO    [0m my_log:basepage.py:82 在登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')上输入文本值: admindw7397成功！
+[32mINFO    [0m my_log:basepage.py:31 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+[32mINFO    [0m my_log:basepage.py:55 查找清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+[32mINFO    [0m my_log:basepage.py:116 在清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')清除文本值成功！
+[32mINFO    [0m my_log:basepage.py:31 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+[32mINFO    [0m my_log:basepage.py:55 查找登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+[32mINFO    [0m my_log:basepage.py:82 在登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')上输入文本值: Pw@000000成功！
+[32mINFO    [0m my_log:basepage.py:31 等待元素('xpath', '//button[@class="login-form-button btn_active"]')可见成功！
+[32mINFO    [0m my_log:basepage.py:55 查找登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+[32mINFO    [0m my_log:basepage.py:66 点击登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！

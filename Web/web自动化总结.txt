@@ -1,0 +1,290 @@
+﻿web页面组成
+元素定位id   find_element_by_id()(id="值")
+class      find_element_by_class_name()(class="值")
+name    find_element_by_name()(name="值")
+tag     find_element_by_tag_name()(标签名)
+link    find_element_by_link_text("新闻")
+partial_link    find_element_by_partial_link_text("闻")
+xpath      find_element_by_xpath()
+# 手写xpath定位公式：
+1、//标签名[@属性名=值]
+
+通过上级标签元素定位(如果同级目录出现两个span，使用span[1] 或 span[2]区分)
+    <span class="tools"> <span class="bg s_btn_wr"> <input type="submit" id="su" value="百度一下" class="bg s_btn"></span>
+    driver.find_element('xpath', '//span[2]/input[@id="su"]').click()
+
+出现同样的元素，增加元素进行定位
+    <input type="submit" id="su" value="百度一下" class="bg s_btn">
+    <input type="submit" id="su" it="insert" value="搜狗一下" class="bg s_btn">
+    driver.find_element('xpath', '//input[@id="su" and @it="insert"]').click()
+
+2、通过部分属性值来匹配    //标签名[contains(@属性名, 值)]
+3、利用文本    文本全部匹配：//标签名[text()=值]
+    文本部分匹配：//标签名[contains(text(), 值)]
+4、轴定位
+相对于以上3中方式，轴定位是比较复杂的了，一般用以上3中还是定位不了，我们就会采用轴定位的方式了
+先介绍下轴定位的语法：
+轴名称::节点名称
+轴名称常用的有以下：
+ancestor：祖先节点，包括父节点
+parent：父节点
+preceding：当前节点标签之前的所有节点
+prececing-sibling：当前节点前的所有兄弟节点（同级）
+following：当前节点标签之后的所有节点
+following-sibling：当前节点标签之后的所有兄弟节点（同级）
+举个栗子吧：课堂派中的注册框中的已有账号用其他方式是定位不了的，需要采用轴定位方式
+//div[@class="choose"]/following-sibling::a/span[@class="str1"]
+
+
+web框架：
+应用了数据驱动思想和关键字驱动思想。
+应用了PO分层设计思想，更方便的管理和维护、优化和升级 用例。
+框架结构设计：
+    PO思想：面向对象层 - 封装每个页面的操作
+            页面定位层 - 封装每个页面的元素定位
+            测试用例层 - 按功能模块分层存放测试用例，测试用例的框架是pytest
+            测试数据层 - 管理测试用例
+
+    Common层：实现页面操作的关键字封装，实现失败截图、失败异常捕获、日志输出
+    API层：存放测试用例当中，用到的接口请求
+    Outputs层：存放日志、失败截图、测试报告
+
+1.PO(PageObject)模式 - (修改一处，相当于同步修改所有引用我的！！/相对单个部分进行修改/优化，与他人无关)
+  所有的测试用例 = 页面的各种点点点串起来的。
+  分离了 测试用例 和 测试对象
+  测试用例 = 测试对象 操作集 + 测试数据
+  测试数据单独管理？  数据共享、环境更换
+
+2.测试用例的设计原则 === 功能的测试用例。
+
+3.basepage提取 === 关键字封装 === 与业务无关，哪个web页面都可以用
+  用例执行过程中，任何一个地方失败了，都可以实时截图、实时获取异常日志、日志记录每一个操作过程
+  测试用例  -> 测试对象  -> selenium基本操作
+  等待可见、等待存在、查找元素、元素输入、元素点击、元素属性获取、元素文本获取、iframe切换、alter切换等。。。
+
+  页面对象 = (没有元素定位的函数/元素等待的函数 - 对页面对象层屏蔽) 元素操作的函数
+
+4.pytest --- 筛选用例、allure报告、提供所有用例的运行时间
+  相对于unittest来说，好的地方？
+      1.编写相对简单
+      2.自动发现测试用例  pytest.main()
+      3.断言：assert表达式
+      4.四个级别的前置后置：session\module\class\function
+      5.600+插件
+
+  自动发现测试用例：
+      1.目录：在哪个目录运行pytest
+      2.文件名：test_开头，或者以_test结尾的.py
+      3.用例：test_函数、Test开头的类(没有__init__)里面的 test_函数
+
+  筛选用例：
+      1.注册标签名 pytest.ini [pytest] markers =
+      2.标记用例 @pytest.mark.注册的标记
+      3.运行带标记的用例：pytest -m 标记(-s, -v)
+
+5.fixture  pytest框架自己的前置后置
+  1) 定义fixture -- function\clasmodule\session
+     conftest.py  文件用来存放前置后置(名字固定)  ===  支持层级创建和使用
+
+     定义一个函数，在函数上面加上：@pytest.fixture(scope="function\clasmodule\session") # 默认值是function
+     @pytest.fixture  # 默认夹的是测试用例
+     def myFix():  # 函数名称就是fixture对外的使用名称
+        前置代码
+        yield 返回值
+        后置代码
+
+  2) 在测试用例中，使用fixture
+     在测试用例文件中，不需要引入conftest.py文件。
+     1) 在测试用例/类 前面：@pytest.mark.usefixtures("fixture的函数名称")
+        表示调用对应的前置后置代码。
+        但是不能够决定决定fixture夹的是谁，在定义fixture的时候，就已经确定了。
+
+     2) 如果fixture中有返回值，而测试用例当中，要使用这个返回值的话，那么
+        fixture的函数名称 作为 测试用例的参数  fixture的函数名=返回值
+
+  3) 在fixture当中，"继承"使用其他的fixture
+     已有1个fixture，要定义第2个fixture，而第2个fixture，包含第1个fixture。。。
+     可以"继承"
+     @pytest.fixture
+     def myFix1():
+        前置代码
+        yield 返回值
+        后置代码
+
+     @pytest.fixture
+     def myFix2(myFix1):
+        前置代码2
+        yield 返回值
+        后置代码2
+
+
+  # 参数化实现，类似于ddt(括号内的第一个参数用来接收后面解包的值，名字必须跟函数中参数名一致)
+  @pytest.mark.parametrize("data", ld.fail_datas)
+  def test_1(data):
+    print(data)
+
+6.allure生成测试报告
+    1.pip install pytest-html
+    2.pin install allure-pytest
+    3.下载allure配置环境变量
+    4.执行命令：pytest --alluredir=outputs/reports
+      生成报告：allure serve outputs/reports
+
+7.web自动化各操作总结
+from selenium import webdriver
+import time
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+
+# 第一种，隐式等待
+driver.implicitly_wait(10)
+
+driver.get("https://mail.qq.com/")
+driver.maximize_window()
+print(123)
+
+
+# # iframe切换三种方式
+# 按照name属性进行切换
+# driver.switch_to.frame('login_frame')
+# # 根据表单的下标（下标从0开始）
+# driver.switch_to.frame(0)
+# # 直接传入定位到的webelement对象
+# driver.switch_to.frame(driver.find_element_by_id('login_frame'))
+# # 方式二(不需要driver驱动的方式)(frame可用并且切换进去)
+# EC.frame_to_be_available_and_switch_to_it((By.ID, 'login_frame'))
+# # 直接表单切换加显式等待
+# WebDriverWait(driver,20).until(
+#     EC.frame_to_be_available_and_switch_to_it((By.ID, 'login_frame')))
+# 退回到父框架
+driver = switch_to.parent_frame()
+# 退出框架， 退出到最开始的框架
+driver = switch_to.default_content()
+
+
+
+# 第一步：触发弹窗
+# 第二步：创建弹窗对象，用于操作弹窗
+# alter = driver.switch_to.alert
+# # 第三步：关闭弹窗(如果弹窗中有确定和取消两个按钮的话)
+# # 取消
+# alter.dismiss()
+# # 确定
+# alter.accept()
+# # 如果弹窗中需要写入数据
+# alter.send_keys()
+
+# 处理窗口
+有些页面打开的时候会重新打开一个窗口，如果想在新页面上操作，就得先切换到新的窗口，
+获取窗口的唯一标识用句柄表示，所以需要切换句柄
+# 获取当前窗口的句柄
+ww = driver.current_window_handle
+# 获取所有窗口的句柄(列表)
+dd = dr.window_handles
+# 切换窗口(-1代表就是最新的窗口)
+dd.switch_to.window(dd[-1])
+
+
+# 用户操作：
+key_down()模拟按键按下
+key_up()模拟按键弹起
+click()点击
+send_keys()发送
+double_click()鼠标左键双击
+click_and_hold()鼠标左键点住不放
+move_to_element()鼠标悬停操作
+content_click()鼠标右键点击
+drag_and_drop()拖拽
+
+# 移动到某个元素的中心点：
+from selenium.webdriver.common.action_chains import ActionChains
+# 定位到某个元素(创建元素对象)
+dd = driver.find_element_by_xpath()
+# 移动到该元素的中心点(传入浏览器对象和要操作的元素对象)(perform用来执行操作)
+ActionChains(driver).move_to_element(dd).perform()
+
+# 鼠标拖动滑块：
+from selenium.webdriver.common.action_chains import ActionChains
+# 切换到滑块框架
+driver.switch_to.frame()
+# 获取滑动的元素的位置
+dd = driver.find_element_by_xpath()
+# 滑动到指定位置
+ActionChains(driver).drag_and_drop_offset(dd, 190, 0).perform()
+
+
+# driver.find_element_by_id('kw').send_keys("bowen")
+# driver.find_element_by_xpath('//div[@id="u1"]//a[@name="tj_login"]').click()
+
+# # 第二种，显式等待
+# loc = (By.ID,'TANGRAM__PSP_11__footerULoginBtn')
+# # 显示等待，明确等到某个元素出现，等待10秒钟，默认是0.5s请求一次
+# # visibility_of_all_elements_located指定元素可见，括号内传入一个元组类型的数据
+# WebDriverWait(driver,10,1).until(EC.visibility_of_all_elements_located(loc))
+# # 为了保证页面有足够的加载时间，可以在显式等待后面强制等待0.5s，一般不要超过2s钟（保证代码执行的稳定）
+# time.sleep(0.5)
+# # 跟源码的写法一致，等同于driver.find_element_by_id('TANGRAM__PSP_11__footerULoginBtn')
+# driver.find_element(*loc).click()
+# driver.find_element_by_id('TANGRAM__PSP_11__footerULoginBtn').click()
+
+# 滚动条的操作
+# 获取浏览器滚动条的代码，根据高度移动滚动条
+js = "var q=document.documentElement.scrollTop=1000"
+# 执行js代码
+driver.execute_script(js)
+# 根据某元素移动滚动条，将滚动条移动到元素所在的位置
+dd = driver.find_element_by_xpath()
+driver.execute_script('arguments[0].scrollIntoView();', dd)
+
+1.移动到元素element对象的"底端"与当前窗口的"底部"对齐
+driver.execute_script('arguments[0].scrollIntoview(false);',element)
+2.移动到元素element对象的"顶端"与当前窗口的"顶部"对齐
+driver.execute_script('arguments[0].scrollIntoview();',element)
+3.移动到页面底部
+driver.execute_script('window.scrollTo(0,document.body.scrollHeight)')
+4.移动到页面顶部
+driver.execute_script('window.scrollTo(document.body.scrollHeight,0)')
+
+
+# 下拉框操作:
+# 两种方法任选其一，都是指向同一个文件
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.select import Select
+
+# 实例化一个Select类的对象
+selector = Select(driver.find_element_by_id("selectdemo"))
+
+# 下面三种方法用于选择"篮球运动员"
+selector.select_by_index("2")  # 通过index进行选择,index从0开始
+selector.select_by_value("210103")  # 通过value属性值进行选择
+selector.select_by_visible_text("篮球运动员")  # 通过标签显示的text进行选择
+
+# 定位到下拉选择框
+selector = driver.find_element_by_id("selectdemo")
+# selector = driver.find_element_by_xpath(".//*[@id='selectdemo']")
+
+# 选择"篮球运动员"
+selector.find_element_by_xpath("//option[@value='210103']").click()
+
+
+
+#########
+配置文件中的叫section(章节/区域)和option(选项)
+
+鼠标悬停操作
+
+
+
+
+unittest总结：
+mock测试
+
+
+
+
+
+
+

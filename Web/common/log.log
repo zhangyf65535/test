@@ -1,0 +1,499 @@
+2022-07-05 15:14:45,862 - [basepage.py-->line:26] - ERROR: 等待元素('xpath', '//input[@id="Username"]')可见失败！
+Traceback (most recent call last):
+  File "D:\zyf\PythonProject\Web\common\basepage.py", line 23, in wait_ele_visible
+    WebDriverWait(self.driver, timout, frequency).until(EC.visibility_of_element_located(loc))
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\support\wait.py", line 81, in until
+    value = method(self._driver)
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 125, in _predicate
+    return _element_if_visible(driver.find_element(*locator))
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 857, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 435, in execute
+    self.error_handler.check_response(response)
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+  (Session info: chrome=103.0.5060.53)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x007B6463+2188387]
+	Ordinal0 [0x0074E461+1762401]
+	Ordinal0 [0x00663C40+801856]
+	Ordinal0 [0x00658932+756018]
+	Ordinal0 [0x00659168+758120]
+	Ordinal0 [0x0065AA22+764450]
+	Ordinal0 [0x00654379+738169]
+	Ordinal0 [0x006650D0+807120]
+	Ordinal0 [0x006BC402+1164290]
+	Ordinal0 [0x006AC5F6+1099254]
+	Ordinal0 [0x00686BE0+945120]
+	Ordinal0 [0x00687AD6+948950]
+	GetHandleVerifier [0x00A571F2+2712546]
+	GetHandleVerifier [0x00A4886D+2652765]
+	GetHandleVerifier [0x0084002A+520730]
+	GetHandleVerifier [0x0083EE06+516086]
+	Ordinal0 [0x0075468B+1787531]
+	Ordinal0 [0x00758E88+1805960]
+	Ordinal0 [0x00758F75+1806197]
+	Ordinal0 [0x00761DF1+1842673]
+	BaseThreadInitThunk [0x76526739+25]
+	RtlGetFullPathName_UEx [0x77458FEF+1215]
+	RtlGetFullPathName_UEx [0x77458FBD+1165]
+
+2022-07-05 15:14:57,967 - [basepage.py-->line:41] - ERROR: 网页截图失败！
+Traceback (most recent call last):
+  File "D:\zyf\PythonProject\Web\common\basepage.py", line 23, in wait_ele_visible
+    WebDriverWait(self.driver, timout, frequency).until(EC.visibility_of_element_located(loc))
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\support\wait.py", line 81, in until
+    value = method(self._driver)
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 125, in _predicate
+    return _element_if_visible(driver.find_element(*locator))
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 857, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 435, in execute
+    self.error_handler.check_response(response)
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+  (Session info: chrome=103.0.5060.53)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x007B6463+2188387]
+	Ordinal0 [0x0074E461+1762401]
+	Ordinal0 [0x00663C40+801856]
+	Ordinal0 [0x00658932+756018]
+	Ordinal0 [0x00659168+758120]
+	Ordinal0 [0x0065AA22+764450]
+	Ordinal0 [0x00654379+738169]
+	Ordinal0 [0x006650D0+807120]
+	Ordinal0 [0x006BC402+1164290]
+	Ordinal0 [0x006AC5F6+1099254]
+	Ordinal0 [0x00686BE0+945120]
+	Ordinal0 [0x00687AD6+948950]
+	GetHandleVerifier [0x00A571F2+2712546]
+	GetHandleVerifier [0x00A4886D+2652765]
+	GetHandleVerifier [0x0084002A+520730]
+	GetHandleVerifier [0x0083EE06+516086]
+	Ordinal0 [0x0075468B+1787531]
+	Ordinal0 [0x00758E88+1805960]
+	Ordinal0 [0x00758F75+1806197]
+	Ordinal0 [0x00761DF1+1842673]
+	BaseThreadInitThunk [0x76526739+25]
+	RtlGetFullPathName_UEx [0x77458FEF+1215]
+	RtlGetFullPathName_UEx [0x77458FBD+1165]
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\zyf\PythonProject\Web\common\basepage.py", line 39, in save_img
+    self.driver.save_screenshot(img_path)
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 953, in save_screenshot
+    return self.get_screenshot_as_file(filename)
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 928, in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 964, in get_screenshot_as_png
+    return b64decode(self.get_screenshot_as_base64().encode('ascii'))
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 976, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)['value']
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 435, in execute
+    self.error_handler.check_response(response)
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+  (Session info: chrome=103.0.5060.53)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x007B6463+2188387]
+	Ordinal0 [0x0074E461+1762401]
+	Ordinal0 [0x00663C40+801856]
+	Ordinal0 [0x00658932+756018]
+	Ordinal0 [0x00659168+758120]
+	Ordinal0 [0x0065AA22+764450]
+	Ordinal0 [0x00654379+738169]
+	Ordinal0 [0x006650D0+807120]
+	Ordinal0 [0x006BC402+1164290]
+	Ordinal0 [0x006AC5F6+1099254]
+	Ordinal0 [0x00686BE0+945120]
+	Ordinal0 [0x00687AD6+948950]
+	GetHandleVerifier [0x00A571F2+2712546]
+	GetHandleVerifier [0x00A4886D+2652765]
+	GetHandleVerifier [0x0084002A+520730]
+	GetHandleVerifier [0x0083EE06+516086]
+	Ordinal0 [0x0075468B+1787531]
+	Ordinal0 [0x00758E88+1805960]
+	Ordinal0 [0x00758F75+1806197]
+	Ordinal0 [0x00761DF1+1842673]
+	BaseThreadInitThunk [0x76526739+25]
+	RtlGetFullPathName_UEx [0x77458FEF+1215]
+	RtlGetFullPathName_UEx [0x77458FBD+1165]
+
+2022-07-05 15:17:26,518 - [basepage.py-->line:26] - ERROR: 等待元素('xpath', '//input[@id="Username"]')可见失败！
+Traceback (most recent call last):
+  File "D:\zyf\PythonProject\Web\common\basepage.py", line 23, in wait_ele_visible
+    WebDriverWait(self.driver, timout, frequency).until(EC.visibility_of_element_located(loc))
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\support\wait.py", line 90, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x007B6463+2188387]
+	Ordinal0 [0x0074E461+1762401]
+	Ordinal0 [0x00663D78+802168]
+	Ordinal0 [0x00691880+989312]
+	Ordinal0 [0x00691B1B+989979]
+	Ordinal0 [0x006BE912+1173778]
+	Ordinal0 [0x006AC824+1099812]
+	Ordinal0 [0x006BCC22+1166370]
+	Ordinal0 [0x006AC5F6+1099254]
+	Ordinal0 [0x00686BE0+945120]
+	Ordinal0 [0x00687AD6+948950]
+	GetHandleVerifier [0x00A571F2+2712546]
+	GetHandleVerifier [0x00A4886D+2652765]
+	GetHandleVerifier [0x0084002A+520730]
+	GetHandleVerifier [0x0083EE06+516086]
+	Ordinal0 [0x0075468B+1787531]
+	Ordinal0 [0x00758E88+1805960]
+	Ordinal0 [0x00758F75+1806197]
+	Ordinal0 [0x00761DF1+1842673]
+	BaseThreadInitThunk [0x76526739+25]
+	RtlGetFullPathName_UEx [0x77458FEF+1215]
+	RtlGetFullPathName_UEx [0x77458FBD+1165]
+
+2022-07-05 15:17:26,761 - [basepage.py-->line:43] - INFO: 截图成功，截图存放在：D:\zyf\PythonProject\Web\outputs\imgs\清除用户名信息_2022-07-05 15_17_26.png！
+2022-07-05 15:54:53,865 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 15:54:53,871 - [basepage.py-->line:55] - INFO: 查找清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 15:54:53,892 - [basepage.py-->line:116] - INFO: 在清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')清除文本值成功！
+2022-07-05 15:54:53,908 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 15:54:53,913 - [basepage.py-->line:55] - INFO: 查找登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 15:54:54,014 - [basepage.py-->line:82] - INFO: 在登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')上输入文本值: admindw7397成功！
+2022-07-05 15:54:54,033 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 15:54:54,039 - [basepage.py-->line:55] - INFO: 查找清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 15:54:54,062 - [basepage.py-->line:116] - INFO: 在清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')清除文本值成功！
+2022-07-05 15:54:54,076 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 15:54:54,082 - [basepage.py-->line:55] - INFO: 查找登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 15:54:54,158 - [basepage.py-->line:82] - INFO: 在登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')上输入文本值: Pw@888888成功！
+2022-07-05 15:55:24,591 - [basepage.py-->line:26] - ERROR: 等待元素('xpath', '//button[@class="login-form-button"]')可见失败！
+Traceback (most recent call last):
+  File "D:\zyf\PythonProject\Web\common\basepage.py", line 23, in wait_ele_visible
+    WebDriverWait(self.driver, timout, frequency).until(EC.visibility_of_element_located(loc))
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\support\wait.py", line 90, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x007B6463+2188387]
+	Ordinal0 [0x0074E461+1762401]
+	Ordinal0 [0x00663D78+802168]
+	Ordinal0 [0x00691880+989312]
+	Ordinal0 [0x00691B1B+989979]
+	Ordinal0 [0x006BE912+1173778]
+	Ordinal0 [0x006AC824+1099812]
+	Ordinal0 [0x006BCC22+1166370]
+	Ordinal0 [0x006AC5F6+1099254]
+	Ordinal0 [0x00686BE0+945120]
+	Ordinal0 [0x00687AD6+948950]
+	GetHandleVerifier [0x00A571F2+2712546]
+	GetHandleVerifier [0x00A4886D+2652765]
+	GetHandleVerifier [0x0084002A+520730]
+	GetHandleVerifier [0x0083EE06+516086]
+	Ordinal0 [0x0075468B+1787531]
+	Ordinal0 [0x00758E88+1805960]
+	Ordinal0 [0x00758F75+1806197]
+	Ordinal0 [0x00761DF1+1842673]
+	BaseThreadInitThunk [0x76526739+25]
+	RtlGetFullPathName_UEx [0x77458FEF+1215]
+	RtlGetFullPathName_UEx [0x77458FBD+1165]
+
+2022-07-05 15:55:24,781 - [basepage.py-->line:43] - INFO: 截图成功，截图存放在：D:\zyf\PythonProject\Web\outputs\imgs\登录页面_点击登录按钮_2022-07-05 15_55_24.png！
+2022-07-05 15:59:30,379 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 15:59:30,385 - [basepage.py-->line:55] - INFO: 查找清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 15:59:30,411 - [basepage.py-->line:116] - INFO: 在清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')清除文本值成功！
+2022-07-05 15:59:30,431 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 15:59:30,437 - [basepage.py-->line:55] - INFO: 查找登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 15:59:30,534 - [basepage.py-->line:82] - INFO: 在登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')上输入文本值: admindw7397成功！
+2022-07-05 15:59:30,550 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 15:59:30,556 - [basepage.py-->line:55] - INFO: 查找清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 15:59:30,581 - [basepage.py-->line:116] - INFO: 在清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')清除文本值成功！
+2022-07-05 15:59:30,594 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 15:59:30,601 - [basepage.py-->line:55] - INFO: 查找登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 15:59:30,677 - [basepage.py-->line:82] - INFO: 在登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')上输入文本值: Pw@888888成功！
+2022-07-05 15:59:30,697 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//button[@class="login-form-button btn_active"]')可见成功！
+2022-07-05 15:59:30,704 - [basepage.py-->line:55] - INFO: 查找登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 15:59:33,341 - [basepage.py-->line:66] - INFO: 点击登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 16:00:09,932 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 16:00:09,939 - [basepage.py-->line:55] - INFO: 查找清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 16:00:09,964 - [basepage.py-->line:116] - INFO: 在清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')清除文本值成功！
+2022-07-05 16:00:09,980 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 16:00:09,990 - [basepage.py-->line:55] - INFO: 查找登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 16:00:10,086 - [basepage.py-->line:82] - INFO: 在登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')上输入文本值: admindw7397成功！
+2022-07-05 16:00:10,103 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 16:00:10,108 - [basepage.py-->line:55] - INFO: 查找清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 16:00:10,133 - [basepage.py-->line:116] - INFO: 在清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')清除文本值成功！
+2022-07-05 16:00:10,147 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 16:00:10,154 - [basepage.py-->line:55] - INFO: 查找登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 16:00:10,229 - [basepage.py-->line:82] - INFO: 在登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')上输入文本值: Pw@000000成功！
+2022-07-05 16:00:10,248 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//button[@class="login-form-button btn_active"]')可见成功！
+2022-07-05 16:00:10,254 - [basepage.py-->line:55] - INFO: 查找登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 16:00:11,622 - [basepage.py-->line:66] - INFO: 点击登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 16:03:10,283 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 16:03:10,290 - [basepage.py-->line:55] - INFO: 查找清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 16:03:10,315 - [basepage.py-->line:116] - INFO: 在清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')清除文本值成功！
+2022-07-05 16:03:10,332 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 16:03:10,338 - [basepage.py-->line:55] - INFO: 查找登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 16:03:10,436 - [basepage.py-->line:82] - INFO: 在登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')上输入文本值: admindw7397成功！
+2022-07-05 16:03:10,452 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 16:03:10,457 - [basepage.py-->line:55] - INFO: 查找清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 16:03:10,484 - [basepage.py-->line:116] - INFO: 在清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')清除文本值成功！
+2022-07-05 16:03:10,499 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 16:03:10,505 - [basepage.py-->line:55] - INFO: 查找登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 16:03:10,584 - [basepage.py-->line:82] - INFO: 在登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')上输入文本值: Pw@000000成功！
+2022-07-05 16:03:10,599 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//button[@class="login-form-button btn_active"]')可见成功！
+2022-07-05 16:03:10,607 - [basepage.py-->line:55] - INFO: 查找登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 16:03:12,172 - [basepage.py-->line:66] - INFO: 点击登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 16:06:19,291 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 16:06:19,297 - [basepage.py-->line:55] - INFO: 查找清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 16:06:19,321 - [basepage.py-->line:116] - INFO: 在清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')清除文本值成功！
+2022-07-05 16:06:19,340 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 16:06:19,346 - [basepage.py-->line:55] - INFO: 查找登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 16:06:19,444 - [basepage.py-->line:82] - INFO: 在登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')上输入文本值: admindw7397成功！
+2022-07-05 16:06:19,461 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 16:06:19,468 - [basepage.py-->line:55] - INFO: 查找清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 16:06:19,492 - [basepage.py-->line:116] - INFO: 在清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')清除文本值成功！
+2022-07-05 16:06:19,506 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 16:06:19,514 - [basepage.py-->line:55] - INFO: 查找登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 16:06:19,594 - [basepage.py-->line:82] - INFO: 在登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')上输入文本值: Pw@000000成功！
+2022-07-05 16:06:19,612 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//button[@class="login-form-button btn_active"]')可见成功！
+2022-07-05 16:06:19,619 - [basepage.py-->line:55] - INFO: 查找登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 16:06:20,986 - [basepage.py-->line:66] - INFO: 点击登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 16:40:20,870 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 16:40:20,877 - [basepage.py-->line:55] - INFO: 查找清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 16:40:20,902 - [basepage.py-->line:116] - INFO: 在清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')清除文本值成功！
+2022-07-05 16:40:20,911 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 16:40:20,924 - [basepage.py-->line:55] - INFO: 查找登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 16:40:21,018 - [basepage.py-->line:82] - INFO: 在登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')上输入文本值: admindw7397成功！
+2022-07-05 16:40:21,035 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 16:40:21,041 - [basepage.py-->line:55] - INFO: 查找清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 16:40:21,066 - [basepage.py-->line:116] - INFO: 在清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')清除文本值成功！
+2022-07-05 16:40:21,081 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 16:40:21,088 - [basepage.py-->line:55] - INFO: 查找登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 16:40:21,165 - [basepage.py-->line:82] - INFO: 在登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')上输入文本值: Pw@000000成功！
+2022-07-05 16:40:21,181 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//button[@class="login-form-button btn_active"]')可见成功！
+2022-07-05 16:40:21,187 - [basepage.py-->line:55] - INFO: 查找登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 16:40:22,608 - [basepage.py-->line:66] - INFO: 点击登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:09:04,251 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:09:04,257 - [basepage.py-->line:55] - INFO: 查找清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:09:04,280 - [basepage.py-->line:116] - INFO: 在清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')清除文本值成功！
+2022-07-05 17:09:04,296 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:09:04,301 - [basepage.py-->line:55] - INFO: 查找登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:09:04,397 - [basepage.py-->line:82] - INFO: 在登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')上输入文本值: admindw7397成功！
+2022-07-05 17:09:04,413 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:09:04,418 - [basepage.py-->line:55] - INFO: 查找清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:09:04,444 - [basepage.py-->line:116] - INFO: 在清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')清除文本值成功！
+2022-07-05 17:09:04,457 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:09:04,464 - [basepage.py-->line:55] - INFO: 查找登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:09:04,541 - [basepage.py-->line:82] - INFO: 在登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')上输入文本值: Pw@000000成功！
+2022-07-05 17:09:04,560 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//button[@class="login-form-button btn_active"]')可见成功！
+2022-07-05 17:09:04,567 - [basepage.py-->line:55] - INFO: 查找登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:09:06,645 - [basepage.py-->line:66] - INFO: 点击登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:09:32,718 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:09:32,723 - [basepage.py-->line:55] - INFO: 查找清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:09:32,747 - [basepage.py-->line:116] - INFO: 在清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')清除文本值成功！
+2022-07-05 17:09:32,767 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:09:32,772 - [basepage.py-->line:55] - INFO: 查找登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:09:32,863 - [basepage.py-->line:82] - INFO: 在登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')上输入文本值: admindw7397成功！
+2022-07-05 17:09:32,881 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:09:32,887 - [basepage.py-->line:55] - INFO: 查找清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:09:32,911 - [basepage.py-->line:116] - INFO: 在清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')清除文本值成功！
+2022-07-05 17:09:32,925 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:09:32,932 - [basepage.py-->line:55] - INFO: 查找登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:09:33,009 - [basepage.py-->line:82] - INFO: 在登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')上输入文本值: Pw@000000成功！
+2022-07-05 17:09:33,029 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//button[@class="login-form-button btn_active"]')可见成功！
+2022-07-05 17:09:33,035 - [basepage.py-->line:55] - INFO: 查找登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:09:35,724 - [basepage.py-->line:66] - INFO: 点击登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:10:12,818 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:10:12,825 - [basepage.py-->line:55] - INFO: 查找清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:10:12,848 - [basepage.py-->line:116] - INFO: 在清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')清除文本值成功！
+2022-07-05 17:10:12,864 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:10:12,870 - [basepage.py-->line:55] - INFO: 查找登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:10:12,964 - [basepage.py-->line:82] - INFO: 在登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')上输入文本值: admindw7397成功！
+2022-07-05 17:10:12,982 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:10:12,988 - [basepage.py-->line:55] - INFO: 查找清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:10:13,014 - [basepage.py-->line:116] - INFO: 在清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')清除文本值成功！
+2022-07-05 17:10:13,028 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:10:13,034 - [basepage.py-->line:55] - INFO: 查找登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:10:13,105 - [basepage.py-->line:82] - INFO: 在登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')上输入文本值: Pw@000000成功！
+2022-07-05 17:10:13,125 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//button[@class="login-form-button btn_active"]')可见成功！
+2022-07-05 17:10:13,131 - [basepage.py-->line:55] - INFO: 查找登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:10:14,304 - [basepage.py-->line:66] - INFO: 点击登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:15:44,886 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:15:44,892 - [basepage.py-->line:55] - INFO: 查找清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:15:44,919 - [basepage.py-->line:116] - INFO: 在清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')清除文本值成功！
+2022-07-05 17:15:44,939 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:15:44,944 - [basepage.py-->line:55] - INFO: 查找登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:15:45,049 - [basepage.py-->line:82] - INFO: 在登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')上输入文本值: admindw7397成功！
+2022-07-05 17:15:45,067 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:15:45,074 - [basepage.py-->line:55] - INFO: 查找清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:15:45,099 - [basepage.py-->line:116] - INFO: 在清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')清除文本值成功！
+2022-07-05 17:15:45,112 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:15:45,118 - [basepage.py-->line:55] - INFO: 查找登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:15:45,194 - [basepage.py-->line:82] - INFO: 在登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')上输入文本值: Pw@000000成功！
+2022-07-05 17:15:45,210 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//button[@class="login-form-button btn_active"]')可见成功！
+2022-07-05 17:15:45,215 - [basepage.py-->line:55] - INFO: 查找登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:15:46,596 - [basepage.py-->line:66] - INFO: 点击登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:19:09,249 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:19:09,256 - [basepage.py-->line:55] - INFO: 查找清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:19:09,275 - [basepage.py-->line:116] - INFO: 在清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')清除文本值成功！
+2022-07-05 17:19:09,298 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:19:09,305 - [basepage.py-->line:55] - INFO: 查找登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:19:09,404 - [basepage.py-->line:82] - INFO: 在登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')上输入文本值: admindw7397成功！
+2022-07-05 17:19:09,422 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:19:09,428 - [basepage.py-->line:55] - INFO: 查找清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:19:09,451 - [basepage.py-->line:116] - INFO: 在清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')清除文本值成功！
+2022-07-05 17:19:09,465 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:19:09,472 - [basepage.py-->line:55] - INFO: 查找登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:19:09,548 - [basepage.py-->line:82] - INFO: 在登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')上输入文本值: Pw@000000成功！
+2022-07-05 17:19:09,566 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//button[@class="login-form-button btn_active"]')可见成功！
+2022-07-05 17:19:09,572 - [basepage.py-->line:55] - INFO: 查找登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:19:11,774 - [basepage.py-->line:66] - INFO: 点击登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:29:38,161 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:29:38,168 - [basepage.py-->line:55] - INFO: 查找清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:29:38,195 - [basepage.py-->line:116] - INFO: 在清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')清除文本值成功！
+2022-07-05 17:29:38,214 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:29:38,222 - [basepage.py-->line:55] - INFO: 查找登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:29:38,322 - [basepage.py-->line:82] - INFO: 在登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')上输入文本值: admindw7397成功！
+2022-07-05 17:29:38,339 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:29:38,345 - [basepage.py-->line:55] - INFO: 查找清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:29:38,366 - [basepage.py-->line:116] - INFO: 在清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')清除文本值成功！
+2022-07-05 17:29:38,378 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:29:38,384 - [basepage.py-->line:55] - INFO: 查找登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:29:38,459 - [basepage.py-->line:82] - INFO: 在登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')上输入文本值: Pw@000000成功！
+2022-07-05 17:29:38,476 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//button[@class="login-form-button btn_active"]')可见成功！
+2022-07-05 17:29:38,480 - [basepage.py-->line:55] - INFO: 查找登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:29:40,723 - [basepage.py-->line:66] - INFO: 点击登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:39:35,214 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:39:35,220 - [basepage.py-->line:55] - INFO: 查找清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:39:35,242 - [basepage.py-->line:116] - INFO: 在清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')清除文本值成功！
+2022-07-05 17:39:35,257 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:39:35,264 - [basepage.py-->line:55] - INFO: 查找登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:39:35,354 - [basepage.py-->line:82] - INFO: 在登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')上输入文本值: admindw7397成功！
+2022-07-05 17:39:35,372 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:39:35,378 - [basepage.py-->line:55] - INFO: 查找清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:39:35,402 - [basepage.py-->line:116] - INFO: 在清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')清除文本值成功！
+2022-07-05 17:39:35,416 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:39:35,423 - [basepage.py-->line:55] - INFO: 查找登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:39:35,494 - [basepage.py-->line:82] - INFO: 在登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')上输入文本值: Pw@000000成功！
+2022-07-05 17:39:35,512 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//button[@class="login-form-button btn_active"]')可见成功！
+2022-07-05 17:39:35,519 - [basepage.py-->line:55] - INFO: 查找登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:39:37,983 - [basepage.py-->line:66] - INFO: 点击登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:41:04,286 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:41:04,293 - [basepage.py-->line:55] - INFO: 查找清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:41:04,321 - [basepage.py-->line:116] - INFO: 在清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')清除文本值成功！
+2022-07-05 17:41:04,339 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:41:04,346 - [basepage.py-->line:55] - INFO: 查找登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:41:04,446 - [basepage.py-->line:82] - INFO: 在登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')上输入文本值: admindw7397成功！
+2022-07-05 17:41:04,464 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:41:04,471 - [basepage.py-->line:55] - INFO: 查找清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:41:04,496 - [basepage.py-->line:116] - INFO: 在清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')清除文本值成功！
+2022-07-05 17:41:04,511 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:41:04,518 - [basepage.py-->line:55] - INFO: 查找登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:41:04,597 - [basepage.py-->line:82] - INFO: 在登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')上输入文本值: Pw@000000成功！
+2022-07-05 17:41:04,615 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//button[@class="login-form-button btn_active"]')可见成功！
+2022-07-05 17:41:04,621 - [basepage.py-->line:55] - INFO: 查找登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:41:06,285 - [basepage.py-->line:66] - INFO: 点击登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:45:00,195 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:45:00,201 - [basepage.py-->line:55] - INFO: 查找清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:45:00,224 - [basepage.py-->line:116] - INFO: 在清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')清除文本值成功！
+2022-07-05 17:45:00,242 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:45:00,247 - [basepage.py-->line:55] - INFO: 查找登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:45:00,345 - [basepage.py-->line:82] - INFO: 在登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')上输入文本值: admindw7397成功！
+2022-07-05 17:45:00,364 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:45:00,371 - [basepage.py-->line:55] - INFO: 查找清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:45:00,396 - [basepage.py-->line:116] - INFO: 在清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')清除文本值成功！
+2022-07-05 17:45:00,410 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:45:00,417 - [basepage.py-->line:55] - INFO: 查找登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:45:00,495 - [basepage.py-->line:82] - INFO: 在登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')上输入文本值: Pw@000000成功！
+2022-07-05 17:45:00,510 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//button[@class="login-form-button btn_active"]')可见成功！
+2022-07-05 17:45:00,516 - [basepage.py-->line:55] - INFO: 查找登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:45:01,571 - [basepage.py-->line:66] - INFO: 点击登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:46:54,304 - [basepage.py-->line:26] - ERROR: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见失败！
+Traceback (most recent call last):
+  File "D:\zyf\PythonProject\Web\common\basepage.py", line 23, in wait_ele_visible
+    WebDriverWait(self.driver, timout, frequency).until(EC.visibility_of_element_located(loc))
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\support\wait.py", line 81, in until
+    value = method(self._driver)
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 125, in _predicate
+    return _element_if_visible(driver.find_element(*locator))
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 147, in _element_if_visible
+    return element if element.is_displayed() == visibility else False
+AttributeError: 'NoneType' object has no attribute 'is_displayed'
+2022-07-05 17:46:54,313 - [basepage.py-->line:41] - ERROR: 网页截图失败！
+Traceback (most recent call last):
+  File "D:\zyf\PythonProject\Web\common\basepage.py", line 23, in wait_ele_visible
+    WebDriverWait(self.driver, timout, frequency).until(EC.visibility_of_element_located(loc))
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\support\wait.py", line 81, in until
+    value = method(self._driver)
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 125, in _predicate
+    return _element_if_visible(driver.find_element(*locator))
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 147, in _element_if_visible
+    return element if element.is_displayed() == visibility else False
+AttributeError: 'NoneType' object has no attribute 'is_displayed'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\zyf\PythonProject\Web\common\basepage.py", line 39, in save_img
+    self.driver.save_screenshot(img_path)
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 953, in save_screenshot
+    return self.get_screenshot_as_file(filename)
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 928, in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 964, in get_screenshot_as_png
+    return b64decode(self.get_screenshot_as_base64().encode('ascii'))
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 976, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)['value']
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 435, in execute
+    self.error_handler.check_response(response)
+  File "D:\software_install\Python3.10.4\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=103.0.5060.114)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00766463+2188387]
+	Ordinal0 [0x006FE461+1762401]
+	Ordinal0 [0x00613D78+802168]
+	Ordinal0 [0x005FC680+706176]
+	Ordinal0 [0x0065F169+1110377]
+	Ordinal0 [0x0066C3C2+1164226]
+	Ordinal0 [0x0065C5F6+1099254]
+	Ordinal0 [0x00636BE0+945120]
+	Ordinal0 [0x00637AD6+948950]
+	GetHandleVerifier [0x00A071F2+2712546]
+	GetHandleVerifier [0x009F886D+2652765]
+	GetHandleVerifier [0x007F002A+520730]
+	GetHandleVerifier [0x007EEE06+516086]
+	Ordinal0 [0x0070468B+1787531]
+	Ordinal0 [0x00708E88+1805960]
+	Ordinal0 [0x00708F75+1806197]
+	Ordinal0 [0x00711DF1+1842673]
+	BaseThreadInitThunk [0x765C6739+25]
+	RtlGetFullPathName_UEx [0x77C18FEF+1215]
+	RtlGetFullPathName_UEx [0x77C18FBD+1165]
+
+2022-07-05 17:55:44,909 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:55:44,915 - [basepage.py-->line:55] - INFO: 查找清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:55:44,939 - [basepage.py-->line:116] - INFO: 在清除用户名信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')清除文本值成功！
+2022-07-05 17:55:44,950 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')可见成功！
+2022-07-05 17:55:44,963 - [basepage.py-->line:55] - INFO: 查找登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')成功！
+2022-07-05 17:55:45,078 - [basepage.py-->line:82] - INFO: 在登录页面_输入用户名元素('xpath', '//input[@class="ant-input" and @placeholder="请输入账号"]')上输入文本值: admindw7397成功！
+2022-07-05 17:55:45,095 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:55:45,101 - [basepage.py-->line:55] - INFO: 查找清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:55:45,127 - [basepage.py-->line:116] - INFO: 在清除密码信息元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')清除文本值成功！
+2022-07-05 17:55:45,141 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')可见成功！
+2022-07-05 17:55:45,147 - [basepage.py-->line:55] - INFO: 查找登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')成功！
+2022-07-05 17:55:45,224 - [basepage.py-->line:82] - INFO: 在登录页面_输入密码元素('xpath', '//input[@class="ant-input" and @placeholder="请输入密码"]')上输入文本值: Pw@000000成功！
+2022-07-05 17:55:45,244 - [basepage.py-->line:31] - INFO: 等待元素('xpath', '//button[@class="login-form-button btn_active"]')可见成功！
+2022-07-05 17:55:45,250 - [basepage.py-->line:55] - INFO: 查找登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
+2022-07-05 17:55:46,301 - [basepage.py-->line:66] - INFO: 点击登录页面_点击登录按钮元素('xpath', '//button[@class="login-form-button btn_active"]')成功！
